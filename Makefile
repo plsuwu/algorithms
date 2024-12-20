@@ -13,6 +13,7 @@ compile: target_dir
 	gcc src/quicksort.c utils/utils.c -o target/quicksort
 	gcc src/double_linked_list.c -o target/double_linked_list
 
+TARGET := target
 target_dir:
-	rm -r ./target
+	if [ -d ${TARGET} ]; then rm -r ./target; fi
 	mkdir ./target
