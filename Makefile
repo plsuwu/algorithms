@@ -3,6 +3,7 @@ make:
 	gcc src/queue.c utils/utils.c -o target/queue
 	gcc src/stack.c utils/utils.c -o target/stack 
 	gcc src/quicksort.c utils/utils.c -o target/quicksort
+	gcc src/double_linked_list.c -o target/double_linked_list
 
 run: 
 	make
@@ -11,3 +12,4 @@ run:
 	./target/queue && printf "\n"
 	./target/stack && printf "\n"
 	./target/quicksort && printf "\n"
+	./target/double_linked_list && printf "\n"
