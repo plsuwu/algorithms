@@ -13,7 +13,8 @@ typedef struct Queue {
 } queue_t;
 
 void enqueue(queue_t *queue, int item) {
-    // alloc new memory for the node
+    // alloc new memory for the node - note that we don't have to typecast the
+    // malloc like this in C
     node_t *node = (node_t *)malloc(sizeof(node_t));
     if (node == NULL) {
         return; // allocation failure
@@ -68,8 +69,8 @@ void enqueue(queue_t *queue, int item) {
 int dequeue(queue_t *queue) {
     // if there is nothing to dequeue (i.e, if the queue is empty), return -1 to
     // indicate an error
-    // (this might be `undefined` or a `Result<Error>` type depending on the
-    // type system)
+    // (this might be something like `undefined` or a `Result<Error>` type
+    // depending on the type system)
     if (queue->length == 0) {
         return -1;
     }
